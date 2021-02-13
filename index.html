@@ -1,179 +1,89 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto Ambiental</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/estilos.css">
-</head>
-<body>
-    <header class="hero">
-        <div class="container">
-            <nav class="nav">
-                <a href="https://drive.google.com/file/d/1mWgAn4mLu8uX0SpDpfB8c_MUzM3R3Gq9/view?usp=sharing" class="nav__items nav__items--cta">Download</a>
-            </nav>
-            <section class="hero__container">
-                <div class="hero__text">
-                    <h1 class="hero__title">Universidad de Nariño [Humanistica]</h1>
-                    <h2 class="hero__subtitle">Bienestar Animal, una proyección ambiental y social</h2>
-                    <a href="https://drive.google.com/file/d/1mWgAn4mLu8uX0SpDpfB8c_MUzM3R3Gq9/view?usp=sharing" class="hero__cta">Download</a>
-                </div>
-            </section>
-        </div>
-        <div class="hero__wave" style="overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
-    </header>    
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
 
-    <main>
-        <section class="presentation container">
-            <img src="assets/img_prof.png" class="presentation__picture" alt="">
-            <h2 class="subtitle">Grupo de trabajo </h2>
-            <hr>
-            <h2 class="subtitle">Luis Rozo, Lizeth Bastidaas, Byron Moncayo</h2>
-            <p class="presentation_copy">Proyecto Final Bienestar Animal, una proyecci´on Ambiental y Social.</p>
-            <a href="https://drive.google.com/file/d/15K0l4Lsr9DgoFSBhxECA3MtRYVtqOO42/view?usp=sharing" class="presentation__cta">Anteproyecto - PDF</a>
-        </section>
-        <section class="about container">
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/8.2.7/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/8.2.7/firebase-auth.js"></script>
+    <script defer src="/__/firebase/8.2.7/firebase-database.js"></script>
+    <script defer src="/__/firebase/8.2.7/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/8.2.7/firebase-functions.js"></script>
+    <script defer src="/__/firebase/8.2.7/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/8.2.7/firebase-storage.js"></script>
+    <script defer src="/__/firebase/8.2.7/firebase-analytics.js"></script>
+    <script defer src="/__/firebase/8.2.7/firebase-remote-config.js"></script>
+    <script defer src="/__/firebase/8.2.7/firebase-performance.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
-            <div class="about__texts">
-                <h2 class="subtitle">Introducción</h2>
-                <p class="about__paragraph">El bienestar animal designa el modo en que un animal afronta las condiciones de su entorno.
-                    Un animal est´a en buenas condiciones de bienestar si est´a sano, c´omodo, bien alimentado,
-                    en seguridad, puede expresar formas innatas de comportamiento y no padece sensaciones
-                    desagradables de dolor, miedo o desasosiego. A partir del reconocimiento de que los animales
-                    son seres sensibles, surge la necesidad u obligaci´on de evitar a los animales todo dolor o
-                    sufrimiento innecesario provocado directa o indirectamente por el ser humano, y por lo
-                    tanto es importante que las personas que interact´uen con animales con diferentes objetivos
-                    y en particular en relaci´on a la investigaci´on cient´ıfica sepan valorar y respetar los requisitos
-                    m´ınimos de su bienestar.</p>
-                    <hr>
-                    <br>
-                <p class="about__paragraph">La importancia de educar a las personas por medio de estos conceptos de concientizaci´on, se
-                    ha venido perdido por el hecho de querer materializar a los animales (mascotas), al tratarlas
-                    como objetos y no como seres vivos, por ejemplo el caso en que una mascota de edad avanzada
-                    es abandonada o si estas son hiperactivos.</p>
-            </div>
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="message">
+      <h2>Welcome</h2>
+      <h1>Firebase Hosting Setup Complete</h1>
+      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
+      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    </div>
+    <p id="load">Firebase SDK Loading&hellip;</p>
 
-            <figure class="about__img">
-                <img src="assets/imagen_1.png" class="about__picture">
-            </figure>
-            <figure class="about__img about__img--left">
-                <img src="assets/undraw_video_game_night_8h8m.svg" class="about__picture">
-            </figure>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadEl = document.querySelector('#load');
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.firestore().doc('/foo/bar').get().then(() => { });
+        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        // firebase.analytics(); // call to activate
+        // firebase.analytics().logEvent('tutorial_completed');
+        // firebase.performance(); // call to activate
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-            <div class="about__texts">
-                <h2 class="subtitle">Metodología del juego</h2>
-                <p class="about__paragraph">El punto de partida de nuestro v´ıdeo-juego es Pacman, ya que su tendencia es muy
-                    popular al entretener sin necesidad de violencia, disparos o golpes. Los personajes
-                    fueron reemplazados por perros, gatos y ratones; donde se guarda la idea cl´asica de
-                    lucha que existe entre los mismos.</p>
-                    <hr>
-                    <br>
-                <p class="about__paragraph">El avatar principal ser´a un gato, y su objetivo es comer el punto en el cual se da la
-                    respuesta correcta a la pregunta que se plantee inicialmente. Estos puntos se hallan en
-                    un un laberinto, y el avatar deber´a cuidarse de cuatro caninos que a su vez le andan
-                    persiguiendo. En caso de alcanzarlo, el avatar perder´a una de sus tres vidas, lo mismo
-                    ocurrir´a si se elige la respuesta incorrecta. Si el gato acierta la respuesta correcta,
-                    entonces se le da poder especial de que los perros se conviertan en unos ratones. El
-                    nivel finaliza cuando se logra comer a todos los ratones, logrando pasar as´ı a la siguiente
-                    pregunta.</p>
-            </div>
-
-        </section>
-        <section class="projects">
-            <div class="container">
-                <h2 class="subtitle">Pacman - Game</h2>
-                <div class="project__grid">
-
-                    <article class="projects__item">
-                        <img src="assets/erik-lucatero-FfL2yW0Rwes-unsplash.jpg" class="projects__img">
-                        <div class="projects__hover">
-                            <h2 class="projects__title">Proyecto</h2>
-                            <i class="far fa-file-alt projects__icon"></i>
-                        </div>
-                    </article>
-
-                    <article class="projects__item">
-                        <img src="assets/george-flowers-blYe0BupDuQ-unsplash.jpg" class="projects__img">
-                        <div class="projects__hover">
-                            <h2 class="projects__title">Proyecto</h2>
-                            <i class="far fa-file-alt projects__icon"></i>
-                        </div>
-                    </article>
-
-                    <article class="projects__item">
-                        <img src="assets/kirill-sharkovski-jZ9TPXjoZQk-unsplash.jpg" class="projects__img">
-                        <div class="projects__hover">
-                            <h2 class="projects__title">Proyecto</h2>
-                            <i class="far fa-file-alt projects__icon"></i>
-                        </div>
-                    </article>
-
-                    <article class="projects__item">
-                        <img src="assets/sigmund-By-tZImt0Ms-unsplash.jpg" class="projects__img">
-                        <div class="projects__hover">
-                            <h2 class="projects__title">Proyecto</h2>
-                            <i class="far fa-file-alt projects__icon"></i>
-                        </div>
-                    </article>
-
-                    <article class="projects__item">
-                        <img src="assets/giorgio-trovato-Fd5gupsmn_o-unsplash.jpg" class="projects__img">
-                        <div class="projects__hover">
-                            <h2 class="projects__title">Proyecto</h2>
-                            <i class="far fa-file-alt projects__icon"></i>
-                        </div>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <!--<section class="testimony container">
-            <h2 class="subtitle">Que dicen de nosotros</h2>
-            <div class="testimony_grid">
-                <article class="testimony__item">
-                    <div class="testimony__person">
-                        <img src="assets/mario.jpeg" class="testimony__img" >
-                        <div class="testimony_texts">
-                            <h3 class="testimony__name">Mario Argoti</h3>
-                            <p class="testimony__verification">Creador pacman</p>
-                        </div>
-                    </div>
-                    <p class="testimony__review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat, reprehenderit. Impedit corporis deserunt corrupti unde, fugit accusamus nobis sit sequi?</p>
-                </article>
-                <article class="testimony__item">
-                    <div class="testimony__person">
-                        <img src="assets/mario.jpeg" class="testimony__img" >
-                        <div class="testimony_texts">
-                            <h3 class="testimony__name">Mario Argoti</h3>
-                            <p class="testimony__verification">Creador pacman</p>
-                        </div>
-                    </div>
-                    <p class="testimony__review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat, reprehenderit. Impedit corporis deserunt corrupti unde, fugit accusamus nobis sit sequi?</p>
-                </article>
-            </div>
-        </section>-->
-    </main>
-    <footer class="footer">
-        <div class="container footer__grid">
-            <nav class="nav nav--footer">
-               <!-- <a class="nav__items nav__items--footer" href="">Inicio</a>
-                <a class="nav__items nav__items--footer" href="">Sobre mi</a>
-                <a class="nav__items nav__items--footer" href="">Mis skilss</a>
-                <a class="nav__items nav__items--footer" href="">Proyectos</a>
-               -->
-            </nav>
-            <section class="footer__contact">
-                <h3 class="footer__title ">Contactame</h3>
-                <div class="footer__icons">
-                    <span class="footer__container-icons"><a class="fab fa-facebook-f footer__icon"href="#"></a></span>
-                    <span class="footer__container-icons"><a class="fab fa-twitter footer__icon"href="#"></a></span>
-                    <span class="footer__container-icons"><a class="fab fa-whatsapp footer__icon"href="#"></a></span>                    
-                </div>
-            </section>
-        </div>
-    </footer>
-    <script src="https://kit.fontawesome.com/5020837229.js" crossorigin="anonymous"></script>
-</body>
+        try {
+          let app = firebase.app();
+          let features = [
+            'auth', 
+            'database', 
+            'firestore',
+            'functions',
+            'messaging', 
+            'storage', 
+            'analytics', 
+            'remoteConfig',
+            'performance',
+          ].filter(feature => typeof app[feature] === 'function');
+          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
+  </body>
 </html>
